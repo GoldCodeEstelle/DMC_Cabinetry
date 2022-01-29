@@ -1,0 +1,146 @@
+{% extends 'base.html' %} 
+
+{% load humanize %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+<!-- Showcase -->
+<section id="showcase">
+    <div class="container text-center">
+      <div class="home-search p-5">
+        <div class="overlay p-5">
+          <h1 style="font: 4em Cardo-serif;" class=" mb-4">
+            Products
+          </h1>
+          <p style="font: 2em Cardo-serif;">Cabinetry for hand-crafted kitchens and baths</p>
+          <div class="search">
+            <form action="{% url 'search' %}">
+              <!-- Form Row 1 -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="sr-only">Keywords</label>
+                  <input type="text" name="keywords" class="form-control" placeholder="Keyword (Color, Type, etc)">
+                </div>
+
+                <!-- <div class="col-md-4 mb-3">
+                  <label class="sr-only">City</label>
+                  <input type="text" name="city" class="form-control" placeholder="City">
+                </div> -->
+
+                <div class="col-md-6  mb-3">
+                  <label class="sr-only">Style</label>
+                  <select name="style" class="form-control">
+                    <option selected="true" disabled="disabled">Style (All)</option>
+                    {% for key,value in style_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <!-- Form Row 2 -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="sr-only">Material</label>
+                  <select name="material" class="form-control">
+                    <option selected="true" disabled="disabled">Material (All)</option>
+                    {% for key,value in material_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select name="color" class="form-control" id="type">
+                    <option selected="true" disabled="disabled">Color (Any)</option>
+                    {% for key,value in color_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <button style= "width: 30%;" class="btn btn-secondary mt-4" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
+
+  <!-- Listings -->
+  <section id="listings" class="py-5">
+    <div class="container">
+      <h3 style="font: 3em Caldo-serif;" class="text-center pb-5">Products</h3>
+      <div class="row">
+        {% if listings %}
+          {% for listing in listings %}
+            <!-- Listing 1 -->
+            <div class="class="col-md-6 col-lg-4 mb-4" ">
+              <div class="card align-items-center listing-preview" style="width: 20rem;">
+                <img class="card-img " style="width: 100px; " src="{{ listing.photo_main.url }}" alt="">
+                <div class="card-img-overlay">
+                  <h2>
+                    <!-- <span class="badge badge-secondary text-white">${{ listing.price | intcomma }}</span> -->
+                  </h2>
+                </div>
+                <div class="card-body">
+                  <div class="listing-heading text-center">
+                    <h4 class="text-primary">{{ listing.title }}</h4>
+                    <p>
+                      <!-- <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p> -->
+                  </div>
+                  <hr>
+                  <div style= "margin-left: 4rem;"class="row py-2  ">
+                    <div class="col-9">
+                      <i class="fas fa-brush "></i> Style: {{ listing.style }}</div>
+                    <div class="col-9">
+                      <i class="fas fa-th-large "></i> Material: {{ listing.material }}</div>
+                  </div>
+                  <!-- <div class="row py-2 ">
+                    <div class="col-6">
+                      <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                    <div class="col-6">
+                      <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}</div>
+                  </div> -->
+                  <a href="{% url 'listing' listing.id %}" style= "width: 125px; margin-left: 5rem;" class="btn btn-secondary mt-4">More Info</a>
+              </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No Listings Available</p>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="fas fa-hand-pointer fa-4x mr-4"></i>
+          <hr class="bg-orange">
+          <h3 style="font: 2em Nunito-serif;">Product Selection</h3>
+          <p>We match the right product for the best results. We understand the importance of value and budget for homeowners, builders, and contractors.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-home fa-4x mr-4"></i>
+          <hr class="bg-orange">
+          <h3 style="font: 2em Nunito-serif;">Custom Design</h3>
+          <p>Quality, thoughtful design is absolutely critical to produce results that last generations. Our design process includes creativity and project planning.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-pencil-ruler fa-4x mr-4"></i>
+          <hr class="bg-orange">
+          <h3 style="font: 2em Nunito-serif;">Installation</h3>
+          <p>We offer turn-key installation services – everything from scheduling, on-site delivery, handling, trade coordination, installation, and finish touch completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

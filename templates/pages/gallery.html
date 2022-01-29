@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | About Us {% endblock %}
+
+{% block content %}
+<hr>
+<section id="gallery">
+    <div style="padding-top: 0px; padding-bottom: 10px;" class="container ">
+        <div class="image-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery1.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery1.jpeg' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery2.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery2.jpeg' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery3.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery3.jpeg' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery4.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery4.jpeg' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery5.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery5.jpeg' %}" class="img-wrapper" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery6.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery6.jpeg' %}" class="img-wrapper" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery7.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery7.jpeg' %}" class="img-wrapper" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                    <a href="{% static 'img/gallery8.jpeg' %}" data-lightbox="home-images">
+                        <img src="{% static 'img/gallery8.jpeg' %}" class="img-wrapper" alt="">
+                    </a>
+                </div>
+                    </div>
+                </div>
+            </div><!-- End row -->
+        </div><!-- End image gallery -->
+    </div><!-- End container -->
+</section>
+{% endblock %}

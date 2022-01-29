@@ -1,0 +1,156 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg justify-content-between navbar-light" role="navigation">
+    <div class="container-fluid">
+      <div style="height: 125px" >
+      <a class="" href="{% url 'index' %}">
+        <img style="height: 150px;" src="{% static 'img/dmc9.svg' %}"  class="d-inline-block align-middle mr-5" alt="">
+      </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ml-auto">
+          <li
+            {% if '/' == request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+            <a class="nav-link text-primary" href="{% url 'index' %}">Home</a>
+          </li>
+          <li
+            {% if 'about' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+            <a class="nav-link text-primary" href="{% url 'about' %}">About</a>
+          </li>
+          <li
+            {% if 'listings' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+            <a class="nav-link text-primary" href="{% url 'listings' %}">Products</a>
+          </li>
+         <li
+          {% if 'gallery' == request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}
+        >
+          <a class="nav-link text-primary" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        {% if user.is_authenticated %}
+            <li
+            {% if 'dashboard' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link" href="{% url 'dashboard' %}">
+               Welcome {{ user.username }} (Dashboard)</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+              <form action="{% url 'logout' %}" method="POST" id="logout">
+                {% csrf_token %}
+                <input type="hidden">
+              </form>
+            </li>
+          {% else %}
+            <!-- <li
+            {% if 'register' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link text-primary" href="{% url 'register' %}">
+                <i class=" "></i> Register</a>
+            </li>
+            <li
+            {% if 'login' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link text-primary" href="{% url 'login' %}">
+                <i class=""></i>
+
+                Login</a>
+            </li> -->
+            <!-- <li
+            {% if 'register' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link text-primary" href="{% url 'admin:index' %}">
+                <i class=""></i> Admin</a>
+            </li> -->
+          <button style= "background-color: white; border: white;" class=" nav-link text-primary btn" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+     <!-- Inquiry Modal -->
+     <div class="modal fade" id="inquiryModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="inquiryModalLabel">How can we help you?</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="{% url 'contact' %}" method="POST">
+              {% csrf_token %}
+              {% if user.is_authenticated %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+              {% else %}
+                <input type="hidden" name="user_id" value="0">
+              {% endif %}
+              <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
+              <input type="hidden" name="listing_id" value="{{ listing.id }}">
+              <div class="form-group">
+                <label for="property_name" class="col-form-label">Product Name:</label>
+                <input type="text" name="listing" class="form-control" value="{{ listing.title }}">
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="email" name="email" class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input type="text" name="phone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-form-label">Message:</label>
+                <textarea name="message" class="form-control"></textarea>
+              </div>
+              <hr>
+              <input type="submit" value="Send" class="btn btn-block btn-secondary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
