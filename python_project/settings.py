@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'kehdb',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': 'localhost'
+        'HOST': 'dmc-cabinetry.herokuapp.com'
     }
 }
 
