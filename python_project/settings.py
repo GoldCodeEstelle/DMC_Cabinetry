@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-jpq@)tit@qdqg8vx1!b8yk@*sy(#fu*v&n-%+d)*o8b)ytrai4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dmc-cabinetry.herokuapp.com', 'localhost:8000']
 
 
 # Application definition
@@ -124,12 +124,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-heroku config:set DISABLE_COLLECTSTATIC=1
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'python_project/static')
