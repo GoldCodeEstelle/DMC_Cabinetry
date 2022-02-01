@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-jpq@)tit@qdqg8vx1!b8yk@*sy(#fu*v&n-%+d)*o8b)ytrai4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dmc-cabinetry.herokuapp.com']
 
@@ -44,10 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
-    # Providers
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+    
 ]
 
 MIDDLEWARE = [
