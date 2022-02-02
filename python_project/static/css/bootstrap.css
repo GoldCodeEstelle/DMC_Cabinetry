@@ -2828,7 +2828,8 @@ input[type="button"].btn-block {
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {
-    position: center;
+    display: center;
+    align-items: center;
     float: none; }
 
 .navbar-text {
