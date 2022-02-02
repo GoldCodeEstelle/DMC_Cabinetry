@@ -11,7 +11,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav bg-dark ml-auto">
+        <ul class="navbar-nav ml-auto">
           <li
             {% if '/' == request.path %}
               class="nav-item active mr-3"
@@ -48,7 +48,7 @@
         >
           <a class="nav-link text-primary" href="{% url 'gallery' %}">Gallery</a>
         </li>
-        <button style= "background-color: rgb(228, 29, 29); border: white;" class=" nav-link text-primary btn" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
+        <button style= "background-color: rgb(255, 255, 255); border: white;" class=" nav-link text-primary btn" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
         {% if user.is_authenticated %}
             <li
             {% if 'dashboard' in request.path %}
