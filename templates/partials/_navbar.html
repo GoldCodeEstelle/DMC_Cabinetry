@@ -48,6 +48,7 @@
         >
           <a class="nav-link text-primary" href="{% url 'gallery' %}">Gallery</a>
         </li>
+        <button style= "background-color: white; border: white;" class=" nav-link text-primary btn" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
         {% if user.is_authenticated %}
             <li
             {% if 'dashboard' in request.path %}
@@ -68,7 +69,7 @@
                 <input type="hidden">
               </form>
             </li>
-            <button style= "background-color: white; border: white;" class=" nav-link text-primary btn" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
+           
           {% else %}
             <!-- <li
             {% if 'register' in request.path %}
