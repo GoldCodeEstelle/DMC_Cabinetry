@@ -95,12 +95,8 @@ address {
 ol,
 ul,
 dl {
-  position: absolute;
-  right: 50px;
-  top: 14px;
-  height: 17rem;
-  align-items: center;
-  background-color: #fff; }
+  margin-top: 0;
+  margin-bottom: 1rem; }
 
 ol ol,
 ul ul,
