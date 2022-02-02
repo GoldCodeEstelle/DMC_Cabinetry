@@ -2819,7 +2819,7 @@ input[type="button"].btn-block {
     text-decoration: none; }
 
 .navbar-nav {
-  display: flex;
+  position: absolute;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
