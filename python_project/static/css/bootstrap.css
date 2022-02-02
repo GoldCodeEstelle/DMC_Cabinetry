@@ -97,7 +97,8 @@ ul,
 dl {
   position: absolute;
   right: 50px;
-  top: 14px; }
+  top: 14px;
+  background-color: #fff; }
 
 ol ol,
 ul ul,
