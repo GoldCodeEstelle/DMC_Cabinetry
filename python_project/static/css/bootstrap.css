@@ -95,8 +95,9 @@ address {
 ol,
 ul,
 dl {
-  margin-top: 0;
-  margin-bottom: 1rem; }
+  position: absolute;
+  right: 50px;
+  top: 14px; }
 
 ol ol,
 ul ul,
