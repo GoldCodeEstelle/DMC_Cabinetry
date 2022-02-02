@@ -48,7 +48,7 @@
         >
           <a class="nav-link text-primary" href="{% url 'gallery' %}">Gallery</a>
         </li>
-        <button style= "background-color: rgb(255, 255, 255); border: white;" class=" nav-link text-primary" data-toggle="modal" data-target="#inquiryModal">CONTACT US</button>
+        <li style= "background-color: rgb(255, 255, 255); border: white;" class=" nav-link text-primary" data-toggle="modal" data-target="#inquiryModal">CONTACT US</li>
         {% if user.is_authenticated %}
             <li
             {% if 'dashboard' in request.path %}
