@@ -2819,7 +2819,7 @@ input[type="button"].btn-block {
     text-decoration: none; }
 
 .navbar-nav {
-  display: center;
+  display: flex;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
@@ -2828,7 +2828,7 @@ input[type="button"].btn-block {
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {
-    position: static;
+    position: center;
     float: none; }
 
 .navbar-text {
