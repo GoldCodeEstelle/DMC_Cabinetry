@@ -2828,10 +2828,8 @@ input[type="button"].btn-block {
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {
-    display: center;
-    align-items: center;
-    float: none;
-   }
+    position: static;
+    float: none; }
 
 .navbar-text {
   display: inline-block;
