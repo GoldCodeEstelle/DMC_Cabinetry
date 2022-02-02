@@ -25,6 +25,6 @@ def contact(request):
     #   fail_silently=False
     # )
 
-    messages.success(request, 'Your request has been submitted, a realtor will get back to you soon')
+    messages.success(request, 'Your request has been submitted, and we will be in touch soon!')
     return redirect('index')
 
