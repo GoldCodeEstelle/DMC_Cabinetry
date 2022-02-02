@@ -119,18 +119,13 @@
           </div>
           <div class="modal-body">
             <form action="{% url 'contact' %}" method="POST">
-        
-            
-              <input type="hidden" name="user_id" value="0">
-              <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
-              <input type="hidden" name="listing_id" value="{{ listing.id }}">
               <div class="form-group">
                 <label for="name" class="col-form-label">Name:</label>
-                <input type="text" name="name" class="form-control" value="{{ user.first_name }} {{ user.last_name }}">
+                <input type="text" name="name" class="form-control"  value="{{ user.first_name }} {{ user.last_name }}" required>
               </div>
               <div class="form-group">
                 <label for="email" class="col-form-label">Email:</label>
-                <input type="email" name="email" class="form-control"  value="{{ user.email }}">
+                <input type="email" name="email" class="form-control"  value="{{ user.email }}" required>
               </div>
               <div class="form-group">
                 <label for="phone" class="col-form-label">Phone:</label>
