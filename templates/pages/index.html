@@ -73,11 +73,11 @@
   <section id="listings" class="py-5">
     <div class="container">
       <h3 style="font: 3em Caldo-serif;" class="text-center pb-5">Products</h3>
-      <div class="row">
+      <div class="row align-items-center">
         {% if listings %}
           {% for listing in listings %}
             <!-- Listing 1 -->
-            <div class="class="col-md-6 col-lg-4 mb-4" ">
+            <div class= "col-md-6 col-lg-4 mb-4 align-items-center">
               <div class="card align-items-center listing-preview" style="width: 20rem;">
                 <img class="card-img " style="width: 100px; " src="{{ listing.photo_main.url }}" alt="">
                 <div class="card-img-overlay">
@@ -97,7 +97,10 @@
                       <i class="fas fa-brush "></i> Style: {{ listing.style }}</div>
                     <div class="col-9">
                       <i class="fas fa-th-large "></i> Material: {{ listing.material }}</div>
+                    <div class="col-9">
+                        <i class="fas fa-tint"></i> Color: {{ listing.color }}</div>
                   </div>
+                  
                   <!-- <div class="row py-2 ">
                     <div class="col-6">
                       <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
@@ -123,19 +126,19 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-4">
-          <i class="fas fa-hand-pointer fa-4x mr-4"></i>
+          <i class="fas fa-hand-pointer fa-4x" style="padding-left: 0rem;"></i>
           <hr class="bg-orange">
           <h3 style="font: 2em Nunito-serif;">Product Selection</h3>
           <p>We match the right product for the best results. We understand the importance of value and budget for homeowners, builders, and contractors.</p>
         </div>
         <div class="col-md-4">
-          <i class="fas fa-home fa-4x mr-4"></i>
+          <i class="fas fa-home fa-4x " style="padding-left: 0rem;"></i>
           <hr class="bg-orange">
-          <h3 style="font: 2em Nunito-serif;">Custom Design</h3>
+          <h3 style="font: 2em Nunito-serif;" >Custom Design</h3>
           <p>Quality, thoughtful design is absolutely critical to produce results that last generations. Our design process includes creativity and project planning.</p>
         </div>
         <div class="col-md-4">
-          <i class="fas fa-pencil-ruler fa-4x mr-4"></i>
+          <i class="fas fa-pencil-ruler fa-4x" style="padding-left: 0rem;"></i>
           <hr class="bg-orange">
           <h3 style="font: 2em Nunito-serif;">Installation</h3>
           <p>We offer turn-key installation services – everything from scheduling, on-site delivery, handling, trade coordination, installation, and finish touch completion.</p>
