@@ -4,6 +4,30 @@
 img {
   width: 100%; }
 
+/** Main header start **/
+.main-header .company-logo {
+  padding: 15px 0;
+  float: left;
+}
+
+.main-header .company-logo-2 {
+  padding: 15px 0;
+  float: left;
+}
+
+.main-header .company-logo img {
+  height: 50px;
+}
+
+.main-header .company-logo-2 img {
+  height: 50px;
+}
+
+.main-header .company-logo-2 img {
+  height: 40px;
+}
+
+
 .logo {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
