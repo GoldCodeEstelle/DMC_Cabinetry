@@ -11,8 +11,7 @@ img {
   border-radius: 0.3rem; }
   @media (min-width: 576px) {
     .navbar-expand-xl {
-      flex-flow: row nowrap;
-      justify-content: flex-start; } }
+      margin-right: 3rem; } }
 
 .navbar {
   opacity: 0.9;
