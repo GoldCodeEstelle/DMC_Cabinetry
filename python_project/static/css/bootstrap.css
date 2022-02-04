@@ -174,7 +174,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
-  width: 50px; }
+  }
 
 svg {
   overflow: hidden;
@@ -2813,15 +2813,12 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
-    display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap; }
-    .navbar-brand:hover, .navbar-brand:focus {
-      text-decoration: none; }
+  position: relative;
+  width: 170px;
+  left: 15px;
+  background-size: contain; }
+  .navbar-brand:hover, .navbar-brand:focus {
+    text-decoration: none; }
 
 .navbar-nav {
   display: flex;
