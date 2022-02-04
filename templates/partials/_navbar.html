@@ -1,12 +1,11 @@
 {% load static %}
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg justify-content-between navbar-light" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container-fluid">
-      <div style="height: 70px" >
-      <a class="navbar-brand company-logo" href="{% url 'index' %}">
-                <img src="">
-            </a>
-      </div>
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'img/dmc9.svg' %}" class="logo" alt="">
+        </a>
+  
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>

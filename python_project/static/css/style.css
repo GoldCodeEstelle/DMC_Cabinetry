@@ -2,40 +2,7 @@
   color: #fff !important; }
 
 img {
-  width: 100%; }
-
-/** Main header start **/
-.main-header .company-logo {
-  padding: 15px 0;
-  float: left;
-}
-
-.main-header .company-logo-2 {
-  padding: 15px 0;
-  float: left;
-}
-
-.main-header .company-logo img {
-  height: 50px;
-}
-
-.main-header .company-logo-2 img {
-  height: 50px;
-}
-
-.main-header .company-logo-2 img {
-  height: 40px;
-}
-
-
-.logo {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem; }
-  @media (min-width: 576px) {
-    .navbar-expand-xl {
-      margin-right: 3rem; } }
+  width: 20%; }
 
 .navbar {
   opacity: 0.9;
@@ -48,7 +15,6 @@ img {
   height: 260px;
   background-color: rgba(0, 0, 0, 0.712);
 }
-
 
 .social a {
   margin-right: 0.4rem; }
