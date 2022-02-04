@@ -1,15 +1,15 @@
 {% load static %}
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-dark text-orange sticky-top">
+<nav class="navbar navbar-expand-lg justify-content-between navbar-light" role="navigation">
     <div class="container-fluid">
-        <!-- <a style= "height: 2rem;" class="" href="{% url 'index' %}">
-          <img style="height: 100px;" src="{% static 'img/dmc9.svg' %}" class="logo" alt="">
-        </a> -->
-      <div style="padding-bottom: 1rem;">
-      <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
-        <span  class="navbar-toggler-icon bg-dark"></span>
+      <div style="height: 70px" >
+      <a class="navbar-brand company-logo" href="{% url 'index' %}">
+                <img src="">
+            </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
       <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto">
           <li
@@ -19,7 +19,7 @@
               class="nav-item mr-3"
             {% endif %}
           >
-            <a class="nav-link text-orange" href="{% url 'index' %}">Home</a>
+            <a class="nav-link text-primary" href="{% url 'index' %}">Home</a>
           </li>
           <li
             {% if 'about' in request.path %}
