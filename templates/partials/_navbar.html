@@ -1,6 +1,6 @@
 {% load static %}
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-light sticky-top">
+<nav class="navbar navbar-expand-lg bg-dark text-orange sticky-top">
     <div class="container-fluid">
         <!-- <a style= "height: 2rem;" class="" href="{% url 'index' %}">
           <img style="height: 100px;" src="{% static 'img/dmc9.svg' %}" class="logo" alt="">
@@ -19,7 +19,7 @@
               class="nav-item mr-3"
             {% endif %}
           >
-            <a class="nav-link text-primary" href="{% url 'index' %}">Home</a>
+            <a class="nav-link text-orange" href="{% url 'index' %}">Home</a>
           </li>
           <li
             {% if 'about' in request.path %}
