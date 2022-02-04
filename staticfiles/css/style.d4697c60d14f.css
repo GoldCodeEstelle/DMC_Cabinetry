@@ -5,8 +5,7 @@ img {
   width: 100%; }
 
 .logo {
-  height: 5;
-}
+    width: 80px; }
 
 .navbar {
   opacity: 0.9;

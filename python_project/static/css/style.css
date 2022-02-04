@@ -2,13 +2,16 @@
   color: #fff !important; }
 
 img {
-  width: 20%; }
+  width: 100%; }
 
 .navbar {
   opacity: 0.9;
   text-transform: uppercase;
   padding-bottom:0;
    }
+
+.logo {
+    width: 100px; }   
 
 .about-me{
   text-align: center;
