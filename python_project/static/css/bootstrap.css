@@ -2814,7 +2814,7 @@ input[type="button"].btn-block {
 
 @media only screen and (max-width:768px) {
   .navbar-brand {
-    max-width: 100px;
+    max-width: 5rem;
   }
   /* below is for the demo but might help you position 
   the hamburger menu on mobile */
