@@ -2812,7 +2812,20 @@ input[type="button"].btn-block {
     align-items: center;
     justify-content: space-between; }
 
-.navbar-brand {
+@media only screen and (max-width:768px) {
+  .navbar-brand {
+    max-width: 100px;
+  }
+  /* below is for the demo but might help you position 
+  the hamburger menu on mobile */
+  .navbar-toggler {
+    right: 0;
+    position: absolute;
+    margin: 10px;
+  }
+}
+
+/* .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -2821,8 +2834,9 @@ input[type="button"].btn-block {
   line-height: inherit;
   white-space: nowrap;
   height: 40rem;   
- }
-  .navbar-brand:hover, .navbar-brand:focus {
+ } */
+
+ .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
 
 .navbar-nav {
