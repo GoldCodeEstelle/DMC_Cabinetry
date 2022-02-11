@@ -2799,12 +2799,12 @@ input[type="button"].btn-block {
   display: block; }
 
 .navbar {
-  z-index: 1000;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-}
+  padding: 0.5rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: flex;
@@ -2813,10 +2813,15 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
-  position: relative;
-  width: 170px;
-  left: 15px;
-  background-size: contain; }
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  height: 40rem;   
+ }
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
 
@@ -2841,12 +2846,13 @@ input[type="button"].btn-block {
 .navbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
-  align-items: right; }
+  align-items: center; }
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem; }
   .navbar-toggler:hover, .navbar-toggler:focus {
